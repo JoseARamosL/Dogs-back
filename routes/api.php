@@ -22,5 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['cors']], function () {
     Route::get('/dogs', [DogController::class, 'dogs'])->name('dogs.list');
     Route::get('/dog/{id}', [DogController::class, 'getDogById'])->name('dogs.getDog');
+    Route::post('/dog/create', [DogController::class, 'store'])->name('dogs.create');
 });
 
